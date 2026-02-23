@@ -1,13 +1,30 @@
 import { motion } from "framer-motion";
-import { ExternalLink, BarChart3, MessageSquare, ShoppingCart, CalendarDays, FileText } from "lucide-react";
+import { ExternalLink, BarChart3, MessageSquare, ShoppingCart, CalendarDays, FileText, Dumbbell, Users } from "lucide-react";
 
 const products = [
+  {
+    icon: Dumbbell,
+    name: "GymFlow",
+    description: "CRM completo con IA para gimnasios. Gestión de miembros, pagos, rutinas y retención automatizada.",
+    tags: ["CRM", "Gimnasios", "IA"],
+    status: "Activo",
+    link: "https://gymflow.one/",
+  },
+  {
+    icon: Users,
+    name: "CRM",
+    description: "CRM para WhatsApp y gestión de clientes. Centraliza conversaciones, seguimiento y ventas en un solo lugar.",
+    tags: ["CRM", "WhatsApp", "Ventas"],
+    status: "Activo",
+    link: "#",
+  },
   {
     icon: BarChart3,
     name: "Analytics AI",
     description: "Dashboard inteligente con insights automáticos para tu negocio. Reportes en tiempo real con IA.",
     tags: ["SaaS", "Analytics", "IA"],
     status: "Activo",
+    link: "#",
   },
   {
     icon: MessageSquare,
@@ -15,6 +32,7 @@ const products = [
     description: "Chatbot con IA conversacional entrenado con tus datos. Atención 24/7 para tus clientes.",
     tags: ["Chatbot", "NLP", "Soporte"],
     status: "Activo",
+    link: "#",
   },
   {
     icon: ShoppingCart,
@@ -22,6 +40,7 @@ const products = [
     description: "Plataforma e-commerce optimizada con recomendaciones personalizadas por IA.",
     tags: ["E-commerce", "IA", "Pagos"],
     status: "Beta",
+    link: "#",
   },
   {
     icon: CalendarDays,
@@ -29,6 +48,7 @@ const products = [
     description: "Sistema de reservas inteligente con optimización automática de horarios y recordatorios.",
     tags: ["Booking", "Automatización"],
     status: "Activo",
+    link: "#",
   },
   {
     icon: FileText,
@@ -36,6 +56,7 @@ const products = [
     description: "Gestión documental con extracción automática de datos, firma digital y workflows.",
     tags: ["Documentos", "OCR", "IA"],
     status: "Próximamente",
+    link: "#",
   },
 ];
 
