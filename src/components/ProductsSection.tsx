@@ -120,7 +120,9 @@ const ProductsSection = () => {
                 ))}
               </div>
               <a
-                href="#"
+                href={product.link}
+                target={product.link.startsWith("http") ? "_blank" : undefined}
+                rel={product.link.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="inline-flex items-center gap-1 text-sm font-medium text-secondary transition-colors hover:text-secondary/80"
               >
                 SABER MÁS <ExternalLink size={14} />
