@@ -24,6 +24,7 @@ const plans = [
       "Código fuente 100% tuyo",
     ],
     cta: "Solicitar cotización",
+    whatsappMessage: "Hola! Me interesa solicitar una cotización para un Proyecto Custom con BZ Creators.",
     highlighted: false,
   },
   {
