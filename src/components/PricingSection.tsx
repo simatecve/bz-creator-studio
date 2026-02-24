@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Zap, Crown, Rocket } from "lucide-react";
 
+const WHATSAPP_NUMBER = "549222761666";
+
+const getWhatsAppUrl = (message: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
 const plans = [
   {
     icon: Zap,
@@ -19,6 +24,7 @@ const plans = [
       "Código fuente 100% tuyo",
     ],
     cta: "Solicitar cotización",
+    whatsappMessage: "Hola! Me interesa solicitar una cotización para un Proyecto Custom con BZ Creators.",
     highlighted: false,
   },
   {
@@ -39,6 +45,7 @@ const plans = [
       "Sin contratos a largo plazo",
     ],
     cta: "Comenzar ahora",
+    whatsappMessage: "Hola! Quiero comenzar con la Suscripción Growth de BZ Creators.",
     highlighted: true,
   },
   {
@@ -58,6 +65,7 @@ const plans = [
       "Consultoría estratégica CTO",
     ],
     cta: "Hablar con ventas",
+    whatsappMessage: "Hola! Me interesa el plan Enterprise de BZ Creators. Quisiera hablar con ventas.",
     highlighted: false,
   },
 ];
@@ -134,7 +142,9 @@ const PricingSection = () => {
               </ul>
 
               <a
-                href="#contacto"
+                href={getWhatsAppUrl(plan.whatsappMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-all ${
                   plan.highlighted
                     ? "bg-gradient-orange text-secondary-foreground hover:shadow-glow-orange"
