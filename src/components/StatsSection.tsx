@@ -6,7 +6,7 @@ const stats = [
   { value: 30, suffix: "+", label: "Clientes satisfechos" },
   { value: 50, suffix: "k+", label: "USD en proyectos implementados" },
   { value: 3, suffix: "", label: "Semanas tiempo promedio" },
-];
+] as const;
 
 const AnimatedNumber = ({ value, suffix, decimals = 0 }: { value: number; suffix: string; decimals?: number }) => {
   const ref = useRef(null);
