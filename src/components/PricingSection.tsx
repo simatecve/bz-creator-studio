@@ -45,6 +45,7 @@ const plans = [
       "Sin contratos a largo plazo",
     ],
     cta: "Comenzar ahora",
+    whatsappMessage: "Hola! Quiero comenzar con la Suscripción Growth de BZ Creators.",
     highlighted: true,
   },
   {
