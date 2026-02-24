@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import bzLogo from "@/assets/bz-logo.png";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
@@ -15,14 +16,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-      <div className="container mx-auto flex items-center justify-between py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/30" style={{ background: "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 6%) 100%)" }}>
+      <div className="container mx-auto flex items-center justify-between py-3">
         <a href="#inicio" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-primary font-heading text-sm font-bold text-primary-foreground">
-            BZ
-          </span>
+          <img src={bzLogo} alt="BZ Creators" className="h-10 w-10 rounded-full object-cover" />
           <span className="font-heading text-lg font-bold tracking-wider text-foreground">
-            CREATOR
+            CREATORS
           </span>
         </a>
 
