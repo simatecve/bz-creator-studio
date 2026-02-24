@@ -1,5 +1,5 @@
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 const stats = [
   { value: 50, suffix: "+", label: "Proyectos entregados" },
@@ -11,19 +11,16 @@ const stats = [
 const AnimatedNumber = ({ value, suffix, decimals = 0 }: { value: number; suffix: string; decimals?: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [display, setDisplay] = useState("0");
+  const spring = useSpring(0, { duration: 2000 });
+  const display = useTransform(spring, (v) => v.toFixed(decimals));
 
   useEffect(() => {
-    if (!isInView) return;
-    const mv = useMotionValue(0);
-    const unsub = mv.on("change", (v) => setDisplay(v.toFixed(decimals)));
-    animate(mv, value, { duration: 2, ease: "easeOut" });
-    return unsub;
-  }, [isInView, value, decimals]);
+    if (isInView) spring.set(value);
+  }, [isInView, value, spring]);
 
   return (
     <span ref={ref} className="text-4xl font-bold text-foreground md:text-5xl">
-      {display}{suffix}
+      <motion.span>{display}</motion.span>{suffix}
     </span>
   );
 };
