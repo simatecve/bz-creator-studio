@@ -65,6 +65,7 @@ const plans = [
       "Consultoría estratégica CTO",
     ],
     cta: "Hablar con ventas",
+    whatsappMessage: "Hola! Me interesa el plan Enterprise de BZ Creators. Quisiera hablar con ventas.",
     highlighted: false,
   },
 ];
