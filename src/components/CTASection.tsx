@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 const CTASection = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
   return (
     <section id="contacto" className="relative py-28">
       <div className="container mx-auto px-4">
@@ -23,13 +27,36 @@ const CTASection = () => {
             <p className="mx-auto mt-6 max-w-lg text-muted-foreground">
               En 20 minutos te damos un plan claro: alcance, tiempo y costo. Sin compromiso, sin letra chica.
             </p>
-            <a
-              href="#"
-              className="group mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-orange px-8 py-4 font-semibold text-secondary-foreground transition-all hover:shadow-glow-orange"
+
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
             >
-              Reservar consulta gratis
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
+              <input
+                type="text"
+                placeholder="Tu nombre"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="flex-1 rounded-full border border-border bg-muted/50 px-5 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+              />
+              <input
+                type="email"
+                placeholder="Tu email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 rounded-full border border-border bg-muted/50 px-5 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+              />
+              <button
+                type="submit"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-orange px-6 py-3 text-sm font-semibold text-secondary-foreground transition-all hover:shadow-glow-orange"
+              >
+                Enviar
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </button>
+            </form>
+            <p className="mt-4 text-xs text-muted-foreground">
+              Sin spam. Respondemos en menos de 24h.
+            </p>
           </div>
         </motion.div>
       </div>
