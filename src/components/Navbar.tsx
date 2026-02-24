@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import bzLogo from "@/assets/bz-logo.png";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
