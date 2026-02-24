@@ -2,9 +2,19 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
+const WHATSAPP_NUMBER = "549222761666";
+
 const CTASection = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = encodeURIComponent(
+      `Hola! Quiero agendar una llamada.\n\nNombre: ${name.trim()}\nEmail: ${email.trim()}`
+    );
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+  };
 
   return (
     <section id="contacto" className="relative py-28">
@@ -29,7 +39,7 @@ const CTASection = () => {
             </p>
 
             <form
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
               className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
             >
               <input

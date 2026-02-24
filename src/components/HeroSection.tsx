@@ -199,7 +199,9 @@ const HeroSection = () => {
           className="mt-10 flex flex-col gap-4 sm:flex-row"
         >
           <motion.a
-            href="#contacto"
+            href={`https://wa.me/549222761666?text=${encodeURIComponent("Hola! Quiero agendar una consulta gratuita para mi proyecto.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-primary px-8 py-3.5 font-medium text-primary-foreground transition-all hover:shadow-glow-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
