@@ -24,7 +24,7 @@ const Navbar = () => {
     <nav className="fixed top-[40px] md:top-[32px] left-0 right-0 z-50 border-b border-border/30" style={{ background: "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 6%) 100%)" }}>
       <div className="container mx-auto flex items-center justify-between py-[4px]">
         <a href="#inicio">
-          <img src={bzLogo} alt="BZ Creators" className="h-14 w-14 rounded-full object-cover" />
+          <img src={bzLogo} alt="BZ Creators" className="h-14 w-auto object-contain" />
         </a>
 
         {/* Desktop */}

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex items-center">
-            <img src={bzLogo} alt="BZ Creators" className="h-12 w-12 rounded-full object-cover" />
+            <img src={bzLogo} alt="BZ Creators" className="h-12 w-auto object-contain" />
           </div>
           <div className="flex gap-6">
             <a href="#servicios" className="text-sm text-muted-foreground hover:text-foreground">Servicios</a>
