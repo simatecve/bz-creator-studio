@@ -5,11 +5,8 @@ const Footer = () => {
     <footer className="border-t border-border py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <div className="flex items-center gap-2">
-            <img src={bzLogo} alt="BZ Creators" className="h-8 w-8 rounded-full object-cover" />
-            <span className="font-heading text-sm font-bold tracking-wider text-foreground">
-              CREATORS
-            </span>
+          <div className="flex items-center">
+            <img src={bzLogo} alt="BZ Creators" className="h-12 w-12 rounded-full object-cover" />
           </div>
           <div className="flex gap-6">
             <a href="#servicios" className="text-sm text-muted-foreground hover:text-foreground">Servicios</a>

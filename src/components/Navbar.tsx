@@ -18,11 +18,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/30" style={{ background: "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 6%) 100%)" }}>
       <div className="container mx-auto flex items-center justify-between py-3">
-        <a href="#inicio" className="flex items-center gap-2">
-          <img src={bzLogo} alt="BZ Creators" className="h-10 w-10 rounded-full object-cover" />
-          <span className="font-heading text-lg font-bold tracking-wider text-foreground">
-            CREATORS
-          </span>
+        <a href="#inicio">
+          <img src={bzLogo} alt="BZ Creators" className="h-14 w-14 rounded-full object-cover" />
         </a>
 
         {/* Desktop */}
