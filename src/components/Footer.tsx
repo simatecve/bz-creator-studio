@@ -6,11 +6,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary font-heading text-xs font-bold text-primary-foreground">
-              BZ
-            </span>
+            <img src={bzLogo} alt="BZ Creators" className="h-8 w-8 rounded-full object-cover" />
             <span className="font-heading text-sm font-bold tracking-wider text-foreground">
-              CREATOR
+              CREATORS
             </span>
           </div>
           <div className="flex gap-6">
