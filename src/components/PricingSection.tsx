@@ -25,7 +25,7 @@ const plans = [
     icon: Crown,
     name: "Suscripción Growth",
     subtitle: "Tu equipo tech por una fracción",
-    price: "$1,200",
+    price: "$1,999",
     period: "USD / mes",
     description: "Acceso continuo a desarrollo, mantenimiento y mejoras. Como tener un equipo in-house.",
     features: [
