@@ -15,7 +15,7 @@ const FloatingCTA = () => {
     <AnimatePresence>
       {visible && (
         <motion.a
-          href={`https://wa.me/549222761666?text=${encodeURIComponent("Hola! Quiero agendar una llamada con BZ Creators.")}`}
+          href={`https://wa.me/5492227611666?text=${encodeURIComponent("Hola! Quiero agendar una llamada con BZ Creators.")}`}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}
