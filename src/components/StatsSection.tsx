@@ -39,7 +39,7 @@ const StatsSection = () => {
               transition={{ delay: i * 0.15 }}
               className="text-center"
             >
-              <AnimatedNumber value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
+              <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
             </motion.div>
           ))}
