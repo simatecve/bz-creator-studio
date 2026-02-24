@@ -78,9 +78,10 @@ const Navbar = () => {
                 </a>
             )}
               <a
-              href="#contacto"
+              href={`https://wa.me/549222761666?text=${encodeURIComponent("Hola! Quiero comenzar un proyecto con BZ Creators.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-full bg-gradient-primary px-6 py-2.5 text-center text-sm font-medium text-primary-foreground">
-
                 Comenzar
               </a>
             </div>
