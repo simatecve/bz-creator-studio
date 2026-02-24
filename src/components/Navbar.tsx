@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-orange text-center py-2.5 text-xs font-medium text-secondary-foreground">
       🔥 Solo aceptamos 3 proyectos nuevos por mes — <span className="font-bold">1 lugar disponible</span>
     </div>
-    <nav className="fixed top-[30px] left-0 right-0 z-50 border-b border-border/30" style={{ background: "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 6%) 100%)" }}>
+    <nav className="fixed top-[36px] left-0 right-0 z-50 border-b border-border/30" style={{ background: "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 6%) 100%)" }}>
       <div className="container mx-auto flex items-center justify-between py-3">
         <a href="#inicio">
           <img src={bzLogo} alt="BZ Creators" className="h-14 w-14 rounded-full object-cover" />

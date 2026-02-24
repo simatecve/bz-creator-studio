@@ -14,7 +14,7 @@ const Footer = () => {
             <a href="#contacto" className="text-sm text-muted-foreground hover:text-foreground">Contacto</a>
           </div>
           <p className="text-xs text-muted-foreground">
-            © 2026 BZ Creator. Todos los derechos reservados.
+            © 2026 BZ Creators. Todos los derechos reservados.
           </p>
         </div>
       </div>

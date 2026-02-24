@@ -13,7 +13,7 @@ const testimonials = [
   {
     name: "Valentina R.",
     role: "CEO, TechStart",
-    text: "En 3 semanas teníamos nuestro MVP funcionando. La velocidad y calidad de BZ Creator es impresionante.",
+    text: "En 3 semanas teníamos nuestro MVP funcionando. La velocidad y calidad de BZ Creators es impresionante.",
     rating: 5,
   },
   {
