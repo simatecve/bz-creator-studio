@@ -1,3 +1,5 @@
+import bzLogo from "@/assets/bz-logo.png";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border py-12">
