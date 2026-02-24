@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "549222761666";
+const WHATSAPP_NUMBER = "5492227611666";
 
 const CTASection = () => {
   const [name, setName] = useState("");

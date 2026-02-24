@@ -41,7 +41,7 @@ const Navbar = () => {
         </div>
 
         <a
-          href={`https://wa.me/549222761666?text=${encodeURIComponent("Hola! Quiero comenzar un proyecto con BZ Creators.")}`}
+          href={`https://wa.me/5492227611666?text=${encodeURIComponent("Hola! Quiero comenzar un proyecto con BZ Creators.")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden rounded-full bg-gradient-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:shadow-glow-primary md:inline-block">
@@ -78,7 +78,7 @@ const Navbar = () => {
                 </a>
             )}
               <a
-              href={`https://wa.me/549222761666?text=${encodeURIComponent("Hola! Quiero comenzar un proyecto con BZ Creators.")}`}
+              href={`https://wa.me/5492227611666?text=${encodeURIComponent("Hola! Quiero comenzar un proyecto con BZ Creators.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block rounded-full bg-gradient-primary px-6 py-2.5 text-center text-sm font-medium text-primary-foreground">
