@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <>
-    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-orange text-center py-1.5 text-xs font-medium text-secondary-foreground">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-orange text-center py-2.5 text-xs font-medium text-secondary-foreground">
       🔥 Solo aceptamos 3 proyectos nuevos por mes — <span className="font-bold">1 lugar disponible</span>
     </div>
     <nav className="fixed top-[30px] left-0 right-0 z-50 border-b border-border/30" style={{ background: "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 6%) 100%)" }}>
