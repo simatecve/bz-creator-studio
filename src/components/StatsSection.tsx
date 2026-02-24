@@ -4,9 +4,9 @@ import { useRef, useEffect } from "react";
 const stats = [
   { value: 50, suffix: "+", label: "Proyectos entregados" },
   { value: 30, suffix: "+", label: "Clientes satisfechos" },
-  { value: 4.9, suffix: "", label: "Rating promedio", decimals: 1 },
+  { value: 50, suffix: "k+", label: "USD en proyectos implementados" },
   { value: 3, suffix: "", label: "Semanas tiempo promedio" },
-];
+] as const;
 
 const AnimatedNumber = ({ value, suffix, decimals = 0 }: { value: number; suffix: string; decimals?: number }) => {
   const ref = useRef(null);
@@ -39,7 +39,7 @@ const StatsSection = () => {
               transition={{ delay: i * 0.15 }}
               className="text-center"
             >
-              <AnimatedNumber value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
+              <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
             </motion.div>
           ))}

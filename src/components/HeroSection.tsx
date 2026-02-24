@@ -106,7 +106,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="inicio" className="relative min-h-screen overflow-hidden pt-32">
+    <section id="inicio" className="relative min-h-screen overflow-hidden pt-36">
       {/* Animated background layers */}
       <div className="absolute inset-0 bg-gradient-hero" />
       <GridBackground />

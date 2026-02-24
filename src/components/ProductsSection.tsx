@@ -74,7 +74,7 @@ const ProductsSection = () => {
             Nuestros <span className="text-gradient-primary">Mini SaaS</span>
           </h2>
           <p className="mt-4 max-w-xl text-muted-foreground">
-            Software que hemos creado y que puedes usar hoy. Productos listos con la calidad de BZ Creator.
+            Software que hemos creado y que puedes usar hoy. Productos listos con la calidad de BZ Creators.
           </p>
           <div className="mt-4 h-1 w-16 rounded-full bg-gradient-orange" />
         </motion.div>
