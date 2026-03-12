@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Zap, Crown, Rocket } from "lucide-react";
-
-const WHATSAPP_NUMBER = "5492227611666";
-
-const getWhatsAppUrl = (message: string) =>
-  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+import { getWhatsAppUrl } from "@/lib/constants";
 
 const plans = [
   {

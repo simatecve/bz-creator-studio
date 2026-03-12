@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/constants";
+
+const floatingUrl = getWhatsAppUrl("Hola! Quiero agendar una llamada con BZ Creators.");
 
 const FloatingCTA = () => {
   const [visible, setVisible] = useState(false);
@@ -15,7 +18,7 @@ const FloatingCTA = () => {
     <AnimatePresence>
       {visible && (
         <motion.a
-          href={`https://wa.me/5492227611666?text=${encodeURIComponent("Hola! Quiero agendar una llamada con BZ Creators.")}`}
+          href={floatingUrl}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}
