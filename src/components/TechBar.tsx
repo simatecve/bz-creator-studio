@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const techs = [
   "React", "TypeScript", "Python", "Node.js", "OpenAI", "AWS", "Supabase", "Figma",
   "Next.js", "TailwindCSS", "PostgreSQL", "Docker",

@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
-
-const WHATSAPP_NUMBER = "5492227611666";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 const CTASection = () => {
   const [name, setName] = useState("");
@@ -25,7 +24,6 @@ const CTASection = () => {
           viewport={{ once: true }}
           className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border border-border card-gradient p-12 text-center md:p-16"
         >
-          {/* Glow effects */}
           <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-primary/10 blur-[100px]" />
           <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-secondary/10 blur-[100px]" />
 

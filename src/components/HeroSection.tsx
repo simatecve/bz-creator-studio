@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Zap, Shield, Clock } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
+import { getWhatsAppUrl } from "@/lib/constants";
 
 const badges = [
   { icon: Sparkles, label: "IA Generativa" },
@@ -43,33 +44,31 @@ const GridBackground = () => (
   </div>
 );
 
-const ParticleField = () => {
-  const particles = Array.from({ length: 25 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 3 + 1,
-    duration: Math.random() * 8 + 6,
-    delay: Math.random() * 5,
-  }));
+const particles = Array.from({ length: 25 }, (_, i) => ({
+  id: i,
+  x: Math.random() * 100,
+  y: Math.random() * 100,
+  size: Math.random() * 3 + 1,
+  duration: Math.random() * 8 + 6,
+  delay: Math.random() * 5,
+}));
 
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      {particles.map((p) => (
-        <motion.div
-          key={p.id}
-          className="absolute rounded-full bg-primary/40"
-          style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.size, height: p.size }}
-          animate={{
-            y: [0, -40, 0],
-            opacity: [0, 0.8, 0],
-          }}
-          transition={{ duration: p.duration, repeat: Infinity, delay: p.delay, ease: "easeInOut" }}
-        />
-      ))}
-    </div>
-  );
-};
+const ParticleField = () => (
+  <div className="absolute inset-0 overflow-hidden">
+    {particles.map((p) => (
+      <motion.div
+        key={p.id}
+        className="absolute rounded-full bg-primary/40"
+        style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.size, height: p.size }}
+        animate={{
+          y: [0, -40, 0],
+          opacity: [0, 0.8, 0],
+        }}
+        transition={{ duration: p.duration, repeat: Infinity, delay: p.delay, ease: "easeInOut" }}
+      />
+    ))}
+  </div>
+);
 
 const AnimatedText = ({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) => {
   const words = text.split(" ");
@@ -91,15 +90,18 @@ const AnimatedText = ({ text, className, delay = 0 }: { text: string; className?
 };
 
 const HeroSection = () => {
-  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX / window.innerWidth) * 100;
       const y = (e.clientY / window.innerHeight) * 100;
-      setMousePos({ x, y });
       document.documentElement.style.setProperty("--mx", `${x}%`);
       document.documentElement.style.setProperty("--my", `${y}%`);
+      if (glowRef.current) {
+        glowRef.current.style.left = `${x}%`;
+        glowRef.current.style.top = `${y}%`;
+      }
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
@@ -107,30 +109,26 @@ const HeroSection = () => {
 
   return (
     <section id="inicio" className="relative min-h-screen overflow-hidden pt-40 md:pt-36">
-      {/* Animated background layers */}
       <div className="absolute inset-0 bg-gradient-hero" />
       <GridBackground />
       <ParticleField />
 
-      {/* Floating orbs */}
       <FloatingOrb delay={0} x="10%" y="20%" size={400} color="hsl(265 80% 60% / 0.12)" />
       <FloatingOrb delay={2} x="70%" y="15%" size={350} color="hsl(280 90% 50% / 0.1)" />
       <FloatingOrb delay={4} x="50%" y="60%" size={300} color="hsl(24 95% 55% / 0.08)" />
       <FloatingOrb delay={6} x="20%" y="70%" size={250} color="hsl(265 60% 40% / 0.1)" />
 
-      {/* Radial glow that follows mouse subtly */}
-      <motion.div
+      <div
+        ref={glowRef}
         className="pointer-events-none absolute h-[600px] w-[600px] rounded-full blur-[120px]"
         style={{
           background: "radial-gradient(circle, hsl(265 80% 60% / 0.08), transparent 70%)",
-          left: `${mousePos.x}%`,
-          top: `${mousePos.y}%`,
+          left: "50%",
+          top: "50%",
           transform: "translate(-50%, -50%)",
         }}
-        transition={{ type: "tween", duration: 0.3 }}
       />
 
-      {/* Scan line effect */}
       <motion.div
         className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent"
         animate={{ top: ["0%", "100%"] }}
@@ -138,7 +136,6 @@ const HeroSection = () => {
       />
 
       <div className="container relative mx-auto flex flex-col items-center px-4 pt-20 text-center">
-        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -154,7 +151,6 @@ const HeroSection = () => {
           Agencia de IA · Software a Medida
         </motion.div>
 
-        {/* Heading with word-by-word animation */}
         <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-7xl" style={{ perspective: "800px" }}>
           <AnimatedText text="Convierte tu idea en un" delay={0.2} />
           <motion.span
@@ -180,7 +176,6 @@ const HeroSection = () => {
           <AnimatedText text=", en semanas." delay={1.1} />
         </h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -191,7 +186,6 @@ const HeroSection = () => {
           No somos una agencia convencional, somos tu socio tecnológico.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -199,7 +193,7 @@ const HeroSection = () => {
           className="mt-10 flex flex-col gap-4 sm:flex-row"
         >
           <motion.a
-            href={`https://wa.me/5492227611666?text=${encodeURIComponent("Hola! Quiero agendar una consulta gratuita para mi proyecto.")}`}
+            href={getWhatsAppUrl("Hola! Quiero agendar una consulta gratuita para mi proyecto.")}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-primary px-8 py-3.5 font-medium text-primary-foreground transition-all hover:shadow-glow-primary"
@@ -225,7 +219,6 @@ const HeroSection = () => {
           </motion.a>
         </motion.div>
 
-        {/* Feature badges */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
