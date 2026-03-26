@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import bzLogo from "@/assets/bz-logo.png";
+import bzLogo from "@/assets/logo-png.png";
 import { getWhatsAppUrl } from "@/lib/constants";
 
 const navLinks = [

@@ -1,4 +1,4 @@
-import bzLogo from "@/assets/bz-logo.png";
+import bzLogo from "@/assets/logo-png.png";
 
 const Footer = () => {
   return (
