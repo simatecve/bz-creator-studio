@@ -33,6 +33,8 @@ export default function AdminDashboard() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [file, setFile] = useState<File | null>(null);
+  const [metaDesc, setMetaDesc] = useState("");
+  const [keywords, setKeywords] = useState("");
 
   useEffect(() => {
     fetchPosts();
@@ -62,6 +64,8 @@ export default function AdminDashboard() {
     setEditingId(post.id);
     setTitle(post.title);
     setContent(post.content);
+    setMetaDesc(post.meta_description || "");
+    setKeywords(post.keywords || "");
     setView("editor");
   };
 
@@ -69,6 +73,8 @@ export default function AdminDashboard() {
     setEditingId(null);
     setTitle("");
     setContent("");
+    setMetaDesc("");
+    setKeywords("");
     setFile(null);
     setView("editor");
   };
@@ -91,7 +97,14 @@ export default function AdminDashboard() {
 
       const slug = title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
       
-      const postData: any = { title, content, slug, published: true };
+      const postData: any = { 
+        title, 
+        content, 
+        slug, 
+        published: true,
+        meta_description: metaDesc,
+        keywords: keywords 
+      };
       if (imageUrl) postData.image_url = imageUrl;
 
       let error;
@@ -254,6 +267,27 @@ export default function AdminDashboard() {
                     accept="image/*" 
                     onChange={e => setFile(e.target.files?.[0] || null)} 
                     className="cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">Meta Descripción (SEO)</label>
+                  <Input 
+                    placeholder="Resumen corto del post para Google (max 160 caracteres)..." 
+                    value={metaDesc} 
+                    onChange={e => setMetaDesc(e.target.value)} 
+                    maxLength={160}
+                    className="text-sm px-4 py-3"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">Palabras Clave (SEO)</label>
+                  <Input 
+                    placeholder="Ejemplo: marketing, diseño, redes sociales (separadas por coma)..." 
+                    value={keywords} 
+                    onChange={e => setKeywords(e.target.value)} 
+                    className="text-sm px-4 py-3"
                   />
                 </div>
 

@@ -21,11 +21,40 @@ export default function BlogPost() {
         .select("*")
         .eq("slug", slug)
         .single();
-      if (data) setPost(data);
+      if (data) {
+        setPost(data);
+        // SEO logic
+        document.title = data.title + " | BZ Creators";
+        
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (!metaDesc) {
+          metaDesc = document.createElement('meta');
+          metaDesc.setAttribute('name', 'description');
+          document.head.appendChild(metaDesc);
+        }
+        // Use meta_description if it exists, otherwise extract plain text from content
+        const plainTextContent = data.content.replace(/<[^>]+>/g, '').substring(0, 160) + '...';
+        metaDesc.setAttribute('content', data.meta_description || plainTextContent);
+        
+        if (data.keywords) {
+          let metaKeywords = document.querySelector('meta[name="keywords"]');
+          if (!metaKeywords) {
+            metaKeywords = document.createElement('meta');
+            metaKeywords.setAttribute('name', 'keywords');
+            document.head.appendChild(metaKeywords);
+          }
+          metaKeywords.setAttribute('content', data.keywords);
+        }
+      }
       setLoading(false);
     };
     fetchPost();
   }, [slug]);
+
+  // Clean up title on unmount
+  useEffect(() => {
+    return () => { document.title = "BZ Creators"; };
+  }, []);
 
   if (loading) return <div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div></div>;
 
