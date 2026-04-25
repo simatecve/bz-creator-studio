@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-import { LayoutDashboard, FileText, Settings, LogOut, Plus, Trash2, Edit } from "lucide-react";
+import { LayoutDashboard, FileText, Settings, LogOut, Plus, Trash2, Edit, ExternalLink } from "lucide-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
@@ -223,10 +223,15 @@ export default function AdminDashboard() {
                           <td className="p-4 text-slate-800 font-medium">{post.title}</td>
                           <td className="p-4 text-slate-500">{new Date(post.created_at).toLocaleDateString()}</td>
                           <td className="p-4 text-right space-x-2">
-                            <Button variant="outline" size="icon" onClick={() => handleEdit(post)}>
+                            <Link to={`/blog/${post.slug}`} target="_blank">
+                              <Button variant="outline" size="icon" title="Ver Post">
+                                <ExternalLink size={16} className="text-blue-600" />
+                              </Button>
+                            </Link>
+                            <Button variant="outline" size="icon" onClick={() => handleEdit(post)} title="Editar">
                               <Edit size={16} className="text-slate-600" />
                             </Button>
-                            <Button variant="outline" size="icon" className="hover:bg-red-50 hover:text-red-600 hover:border-red-200" onClick={() => handleDelete(post.id)}>
+                            <Button variant="outline" size="icon" className="hover:bg-red-50 hover:text-red-600 hover:border-red-200" onClick={() => handleDelete(post.id)} title="Borrar">
                               <Trash2 size={16} />
                             </Button>
                           </td>
@@ -256,7 +261,7 @@ export default function AdminDashboard() {
                     placeholder="Escribe un título impactante..." 
                     value={title} 
                     onChange={e => setTitle(e.target.value)} 
-                    className="text-lg px-4 py-3"
+                    className="text-lg px-4 py-6 bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl shadow-sm transition-all"
                   />
                 </div>
                 
@@ -266,7 +271,7 @@ export default function AdminDashboard() {
                     type="file" 
                     accept="image/*" 
                     onChange={e => setFile(e.target.files?.[0] || null)} 
-                    className="cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                    className="cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 bg-slate-50 border-slate-200 text-slate-900 h-auto rounded-xl shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500 transition-all"
                   />
                 </div>
 
@@ -277,7 +282,7 @@ export default function AdminDashboard() {
                     value={metaDesc} 
                     onChange={e => setMetaDesc(e.target.value)} 
                     maxLength={160}
-                    className="text-sm px-4 py-3"
+                    className="text-sm px-4 py-3 bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl shadow-sm transition-all"
                   />
                 </div>
 
@@ -287,7 +292,7 @@ export default function AdminDashboard() {
                     placeholder="Ejemplo: marketing, diseño, redes sociales (separadas por coma)..." 
                     value={keywords} 
                     onChange={e => setKeywords(e.target.value)} 
-                    className="text-sm px-4 py-3"
+                    className="text-sm px-4 py-3 bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl shadow-sm transition-all"
                   />
                 </div>
 
