@@ -3,7 +3,7 @@ import { createClient } from "@insforge/sdk";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { LayoutDashboard, FileText, Settings, LogOut, Plus, Trash2, Edit, ExternalLink } from "lucide-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
