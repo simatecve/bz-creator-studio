@@ -60,8 +60,9 @@ export default function BlogPost() {
             
             {/* The dangerouslySetInnerHTML is required because quill saves HTML */}
             <div 
-              className="prose prose-lg prose-slate max-w-none 
-                         prose-headings:font-bold prose-a:text-blue-600 hover:prose-a:text-blue-800
+              className="prose prose-lg max-w-none 
+                         text-slate-800 [&_*]:!text-slate-800 [&_a]:!text-blue-600 hover:[&_a]:!text-blue-800
+                         prose-headings:font-bold prose-headings:!text-slate-900
                          prose-img:rounded-xl prose-img:shadow-md"
               dangerouslySetInnerHTML={{ __html: post.content }} 
             />
