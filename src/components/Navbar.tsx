@@ -5,12 +5,13 @@ import bzLogo from "@/assets/logo-png.png";
 import { getWhatsAppUrl } from "@/lib/constants";
 
 const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Proceso", href: "#proceso" },
-  { label: "Precios", href: "#precios" },
-  { label: "Productos", href: "#productos" },
-  { label: "Testimonios", href: "#testimonios" },
+  { label: "Inicio", href: "/#inicio" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Proceso", href: "/#proceso" },
+  { label: "Precios", href: "/#precios" },
+  { label: "Productos", href: "/#productos" },
+  { label: "Testimonios", href: "/#testimonios" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const comenzarUrl = getWhatsAppUrl("Hola! Quiero comenzar un proyecto con BZ Creators.");
