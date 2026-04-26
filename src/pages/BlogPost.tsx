@@ -3,6 +3,7 @@ import { createClient } from "@insforge/sdk";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CommentsSection from "@/components/CommentsSection";
 import { ArrowLeft } from "lucide-react";
 
 const INSFORGE_URL = import.meta.env.VITE_INSFORGE_URL || "https://6w3sgde5.us-east.insforge.app";
@@ -68,8 +69,8 @@ export default function BlogPost() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       <Navbar />
-      <main className="flex-1 w-full pt-24 pb-12">
-        <div className="max-w-4xl mx-auto px-4 relative z-10">
+      <main className="flex-1 w-full pt-24">
+        <div className="max-w-4xl mx-auto px-4 relative z-10 pb-12">
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8 transition-colors">
               <ArrowLeft className="w-4 h-4 mr-2" /> Volver a artículos
@@ -95,6 +96,13 @@ export default function BlogPost() {
                          prose-img:rounded-xl prose-img:shadow-md"
               dangerouslySetInnerHTML={{ __html: post.content }} 
             />
+          </div>
+        </div>
+
+        {/* Comments Section — dark themed, full width strip */}
+        <div className="bg-[hsl(0_0%_4%)] py-16 border-t border-[hsl(0_0%_12%)]">
+          <div className="max-w-4xl mx-auto px-4">
+            <CommentsSection postId={post.id} />
           </div>
         </div>
       </main>
