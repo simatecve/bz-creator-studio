@@ -152,7 +152,7 @@ const HeroSection = () => {
         </motion.div>
 
         <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-7xl" style={{ perspective: "800px" }}>
-          <AnimatedText text="Convierte tu idea en un" delay={0.2} />
+          <AnimatedText text="Escala tu visión con el" delay={0.2} />
           <motion.span
             className="text-gradient-orange inline-block"
             initial={{ opacity: 0, scale: 0.5 }}
@@ -170,10 +170,10 @@ const HeroSection = () => {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              producto real
+              poder de la IA
             </motion.span>
           </motion.span>
-          <AnimatedText text=", en semanas." delay={1.1} />
+          <AnimatedText text=" hoy mismo." delay={1.1} />
         </h1>
 
         <motion.p
@@ -182,8 +182,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 1.4 }}
           className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
-          Desarrollo de software impulsado por inteligencia artificial.
-          No somos una agencia convencional, somos tu socio tecnológico.
+          Desarrollamos ecosistemas digitales inteligentes que impulsan el crecimiento de tu empresa. 
+          Más que una agencia, somos tu motor de innovación tecnológica.
         </motion.p>
 
         <motion.div

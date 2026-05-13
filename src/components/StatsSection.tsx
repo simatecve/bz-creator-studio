@@ -2,10 +2,10 @@ import { motion, useInView, useSpring, useTransform } from "framer-motion";
 import { useRef, useEffect } from "react";
 
 const stats = [
-  { value: 50, suffix: "+", label: "Proyectos entregados" },
-  { value: 30, suffix: "+", label: "Clientes satisfechos" },
-  { value: 50, suffix: "k+", label: "USD en proyectos implementados" },
-  { value: 3, suffix: "", label: "Semanas tiempo promedio" },
+  { value: 50, suffix: "+", label: "Soluciones Desplegadas" },
+  { value: 30, suffix: "+", label: "Empresas Escaladas" },
+  { value: 50, suffix: "k+", label: "Capital Tecnológico Implementado" },
+  { value: 3, suffix: "", label: "Semanas para Lanzamiento" },
 ] as const;
 
 const AnimatedNumber = ({ value, suffix, decimals = 0 }: { value: number; suffix: string; decimals?: number }) => {

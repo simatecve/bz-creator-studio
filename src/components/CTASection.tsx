@@ -29,11 +29,11 @@ const CTASection = () => {
 
           <div className="relative">
             <h2 className="text-3xl font-bold md:text-5xl">
-              Agenda una{" "}
-              <span className="text-gradient-orange">llamada</span>
+              Activa tu Próximo{" "}
+              <span className="text-gradient-orange">Nivel</span>
             </h2>
             <p className="mx-auto mt-6 max-w-lg text-muted-foreground">
-              En 20 minutos te damos un plan claro: alcance, tiempo y costo. Sin compromiso, sin letra chica.
+              En 20 minutos te mostramos cómo la IA puede ahorrarte meses de desarrollo y miles de dólares en operación.
             </p>
 
             <form
@@ -58,7 +58,7 @@ const CTASection = () => {
                 type="submit"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-orange px-6 py-3 text-sm font-semibold text-secondary-foreground transition-all hover:shadow-glow-orange"
               >
-                Enviar
+                Empezar ahora
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </button>
             </form>
