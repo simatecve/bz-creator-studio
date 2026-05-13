@@ -102,5 +102,18 @@
 }
 
 .animate-marquee {
-  animation: marquee 20s linear infinite;
+  animation: marquee 30s linear infinite;
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
+.grayscale-logo {
+  filter: grayscale(1) opacity(0.5);
+  transition: all 0.3s ease;
+}
+
+.grayscale-logo:hover {
+  filter: grayscale(0) opacity(1);
 }
