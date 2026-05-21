@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import ceoImg from "@/assets/ceo.png";
 import ctoImg from "@/assets/cto.jpeg";
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter } from "lucide-react";
 
 const team = [
   {
@@ -44,31 +44,31 @@ const TeamSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2 }}
-              className="group relative rounded-3xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30"
+              className="group rounded-3xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30"
             >
               <div className="aspect-[4/5] overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-700 scale-[1.03] group-hover:scale-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60" />
               </div>
               
-              <div className="absolute bottom-0 left-0 right-0 p-8 pt-0">
-                <div className="mb-4 flex gap-3">
-                  <div className="rounded-full bg-white/10 p-2 backdrop-blur-md hover:bg-primary/20 transition-colors">
-                    <Linkedin size={18} className="text-white" />
-                  </div>
-                  <div className="rounded-full bg-white/10 p-2 backdrop-blur-md hover:bg-primary/20 transition-colors">
-                    <Twitter size={18} className="text-white" />
-                  </div>
-                </div>
+              <div className="p-8">
                 <h3 className="text-2xl font-bold text-foreground">{member.name}</h3>
-                <p className="text-primary font-medium mb-4">{member.role}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-primary font-medium mt-1">{member.role}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mt-4">
                   {member.bio}
                 </p>
+
+                <div className="mt-6 flex gap-3">
+                  <div className="rounded-full bg-muted p-2 hover:bg-primary/10 transition-colors">
+                    <Linkedin size={18} className="text-foreground" />
+                  </div>
+                  <div className="rounded-full bg-muted p-2 hover:bg-primary/10 transition-colors">
+                    <Twitter size={18} className="text-foreground" />
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
