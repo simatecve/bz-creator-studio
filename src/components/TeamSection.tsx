@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import ceoImg from "@/assets/ceo.png";
-import ctoImg from "@/assets/cto.png";
+import ctoImg from "@/assets/cto.jpeg";
 import { Linkedin, Twitter, Mail } from "lucide-react";
 
 const team = [
